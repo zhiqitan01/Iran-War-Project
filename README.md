@@ -1,6 +1,6 @@
-# 美伊战争：冲击与涟漪
+# 2026 美伊战争：冲击与涟漪
 
-数据新闻小组作业
+数据叙事小组作业
 
 ---
 
@@ -30,7 +30,7 @@ iran-war-project/
 | 文件 | 负责人 | 主要任务 |
 |------|--------|---------|
 | `index.html` + `css/style.css` + `js/main.js` | 陈紫琪 | 首页、整体框架 |
-| `pages/humanitarian.html` + `js/humanitarian.js` | 林恺 | 人道主义影响内容 |
+| `pages/humanitarian.html` + `js/humanitarian.js` | 林恺 | 人道影响内容 |
 | `pages/energy.html` + `js/energy.js` | 张颢篷 | 能源影响内容 |
 | `pages/price.html` + `js/price.js` | 吴佩晴 | 物价影响内容 |
 
@@ -38,36 +38,18 @@ iran-war-project/
 
 ## 各组员操作指南
 
-### 1. 时间线内容（humanitarian / energy / price 组员均可参与）
-
-在 `index.html` 中找到 `<div class="timeline-track">` 区域，每个 `.timeline-item` 是一个节点：
-
-```html
-<div class="timeline-item" data-lat="纬度" data-lng="经度" data-zoom="地图缩放级别">
-  <div class="timeline-dot"></div>
-  <div class="timeline-content">
-    <span class="timeline-date">2026年X月X日</span>
-    <h3 class="timeline-title">事件标题</h3>
-    <p class="timeline-desc">事件描述，2–3句话。</p>
-  </div>
-</div>
-```
-
-- `data-lat` / `data-lng`：事件发生地的坐标（用 Google Maps 查）
-- `data-zoom`：地图缩放级别，5–8 之间，越大越近
-
-### 2. 子页面 JS 文件
+### 1. 子页面 JS 文件
 
 打开对应的 `js/humanitarian.js` / `energy.js` / `price.js`，按文件内注释填写：
 - 统计数据（`stats` 数组）
 - 图表（取消对应注释，填入真实数据）
 - 地图标注（energy.js 中的 Leaflet 图层）
 
-### 3. 子页面 HTML 内容
+### 2. 子页面 HTML 内容
 
 在对应 `pages/xxx.html` 的 `<p><!-- 正文段落 -->` 处填写文字。
 
-### 4. 引入图表库
+### 3. 引入图表库
 
 如需 Chart.js，在对应页面的 `<head>` 中取消注释：
 ```html
