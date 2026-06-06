@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>人道影响 — 美伊战争</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/subpage.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Noto+Serif+SC:wght@400;600&family=Space+Mono&display=swap" rel="stylesheet" />
+  <!-- 
+    如需图表库（例如 Chart.js 或 ECharts），在此引入：
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+  -->
+</head>
+<body class="subpage">
+
+  <!-- ── 顶部导航 ── -->
+  <nav class="subpage-nav">
+    <a href="../index.html" class="nav-back">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M19 12H5M12 5l-7 7 7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      返回首页
+    </a>
+    <div class="nav-chapter">
+      <span class="nav-num">01 / 03</span>
+      <span class="nav-title">人道影响</span>
+    </div>
+    <div class="nav-chapters">
+      <a href="humanitarian.html" class="active">人道</a>
+      <a href="energy.html">能源</a>
+      <a href="price.html">物价</a>
+    </div>
+  </nav>
+
+  <!-- ── 页面标题区 ── -->
+  <header class="subpage-hero" style="--accent: #e74c3c;">
+    <div class="subpage-hero-inner">
+      <span class="section-label">01 人道影响</span>
+      <h1 class="subpage-title">
+        战场之内的<br><em>伤痛</em>
+      </h1>
+      <p class="subpage-lead">
+        <!-- 此处填写本章导言，2–3句话，概括人道影响的核心论点 -->
+        战争从不只摧毁军事目标。每一枚导弹，都在某个家庭的餐桌旁留下空位。
+      </p>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════
+       以下区域由本章负责组员填写
+       每个 <section class="content-block"> 是一个内容模块
+       ══════════════════════════════════════════ -->
+  <main class="subpage-main">
+
+    <!-- 模块 1：关键数据（统计卡片） -->
+    <section class="content-block">
+      <div class="block-header">
+        <h2>关键数据</h2>
+      </div>
+      <div class="stat-grid" id="stat-grid-humanitarian">
+        <!-- 
+          humanitarian.js 会动态渲染此区域，
+          或者直接在此写 HTML stat-card，二选一。
+          HTML 静态写法示例：
+
+          <div class="stat-card">
+            <span class="stat-number">--</span>
+            <span class="stat-label">平民死亡人数</span>
+          </div>
+        -->
+      </div>
+    </section>
+
+    <!-- 模块 2：主体叙述 + 图表 -->
+    <section class="content-block">
+      <div class="block-header">
+        <h2>伤亡与流离失所</h2>
+      </div>
+      <div class="text-chart-layout">
+        <div class="text-col">
+          <!-- 叙述文字 -->
+          <p><!-- 正文段落 1 --></p>
+          <p><!-- 正文段落 2 --></p>
+        </div>
+        <div class="chart-col">
+          <!-- 图表容器，humanitarian.js 负责渲染 -->
+          <div id="chart-casualties" class="chart-placeholder">
+            <span>图表加载中…</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模块 3：基础设施破坏 -->
+    <section class="content-block">
+      <div class="block-header">
+        <h2>基础设施破坏</h2>
+        <p class="block-subtitle">学校、医院、住宅受损情况</p>
+      </div>
+      <!-- 图表 / 信息图 区域 -->
+      <div id="chart-infrastructure" class="chart-placeholder">
+        <span>图表加载中…</span>
+      </div>
+    </section>
+
+    <!-- 模块 4：可以继续添加更多模块 -->
+    <!-- 
+      <section class="content-block">
+        <div class="block-header"><h2>标题</h2></div>
+        内容…
+      </section>
+    -->
+
+  </main>
+
+  <!-- ── 底部导航（上一章 / 下一章） ── -->
+  <nav class="chapter-nav">
+    <div class="chapter-nav-item prev disabled">
+      <span class="ch-label">上一章</span>
+      <span class="ch-title">—</span>
+    </div>
+    <div class="chapter-nav-item next">
+      <a href="energy.html">
+        <span class="ch-label">下一章</span>
+        <span class="ch-title">能源影响 →</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ── Scripts ── -->
+  <!-- Leaflet（如本章需要地图） -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- 本章 JS（由本章组员负责） -->
+  <script src="../js/humanitarian.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,241 @@
+/* =====================================================
+   subpage.css — 三个子页面共享样式
+   由首页负责人维护，组员无需修改
+   ===================================================== */
+
+/* ---------- Subpage Nav ---------- */
+.subpage-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 4vw;
+  background: rgba(13,13,15,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-back {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  transition: color 0.2s;
+}
+.nav-back svg { width: 16px; height: 16px; stroke: currentColor; }
+.nav-back:hover { color: var(--text); }
+
+.nav-chapter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+}
+.nav-num {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+}
+.nav-title {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.nav-chapters {
+  display: flex;
+  gap: 1.2rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+}
+.nav-chapters a {
+  color: var(--text-muted);
+  transition: color 0.2s;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+.nav-chapters a:hover { color: var(--text); }
+.nav-chapters a.active {
+  color: var(--accent, var(--accent-red));
+  border-bottom-color: var(--accent, var(--accent-red));
+}
+
+/* ---------- Subpage Hero ---------- */
+.subpage-hero {
+  padding: 7rem 8vw 4rem;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accent, #c0392b) 10%, transparent) 0%, transparent 50%),
+    var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.subpage-hero-inner { max-width: 800px; }
+
+.subpage-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin: 1rem 0;
+}
+
+.subpage-title em {
+  font-style: italic;
+  color: var(--accent, var(--accent-red));
+}
+
+.subpage-lead {
+  font-size: 1.05rem;
+  color: rgba(232,228,220,0.75);
+  line-height: 1.85;
+  max-width: 560px;
+}
+
+/* ---------- Main Content ---------- */
+.subpage-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 6vw 5rem;
+}
+
+.content-block {
+  margin-bottom: 5rem;
+}
+
+.block-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.block-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: #fff;
+}
+
+.block-subtitle {
+  margin-top: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+/* ---------- Text + Chart Layout ---------- */
+.text-chart-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.text-col p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.85;
+  margin-bottom: 1rem;
+}
+
+/* ---------- Stat Grid ---------- */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.2rem;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.4rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.stat-number {
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent, var(--accent-red));
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* ---------- Chart Placeholder ---------- */
+.chart-placeholder {
+  background: var(--bg-card);
+  border: 1px dashed var(--border);
+  border-radius: 4px;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+}
+
+/* ---------- Chapter Navigation ---------- */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 6vw;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+  max-width: 100%;
+}
+
+.chapter-nav-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.chapter-nav-item.next { align-items: flex-end; }
+
+.chapter-nav-item.disabled { opacity: 0.3; pointer-events: none; }
+
+.ch-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.ch-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.chapter-nav-item a:hover .ch-title { color: var(--accent, var(--accent-red)); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .text-chart-layout { grid-template-columns: 1fr; }
+  .subpage-nav .nav-chapters { display: none; }
+  .subpage-hero { padding-top: 5.5rem; }
+}

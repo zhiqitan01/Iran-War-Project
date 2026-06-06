@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>美伊战争：冲击与涟漪</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Noto+Serif+SC:wght@400;600&family=Space+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     HERO: FULL-SCREEN MAP
+══════════════════════════════════════ -->
+<section id="hero">
+  <div id="map"></div>
+
+  <div class="hero-overlay">
+    <div class="hero-text">
+      <p class="hero-eyebrow">2026 · 美伊战争</p>
+      <h1 class="hero-title">战争的<br><em>涟漪</em></h1>
+      <p class="hero-subtitle">从霍尔木兹海峡向外扩散的冲击波<br>如何重塑了全球秩序与普通人的生活</p>
+    </div>
+
+    <!-- Key stats with count-up -->
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="stat-num" data-target="99" data-suffix="天">0</span>
+        <span class="stat-label">战争已持续</span>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num" data-target="9000" data-suffix="+" data-separator=",">0</span>
+        <span class="stat-label">各方确认死亡</span>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num" data-prefix="$" data-target="120" data-suffix="/桶">0</span>
+        <span class="stat-label">布伦特原油峰值</span>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num" data-prefix="$" data-target="290" data-suffix="亿">0</span>
+        <span class="stat-label">美国战争花费</span>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <span>向下滚动</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </div>
+
+  <svg id="ripple-svg" xmlns="http://www.w3.org/2000/svg"></svg>
+</section>
+
+<!-- ══════════════════════════════════════
+     BACKGROUND: WAR CONTEXT
+══════════════════════════════════════ -->
+<section id="background">
+  <div class="bg-layout">
+
+    <!-- LEFT: text content -->
+    <div class="bg-left">
+      <div class="section-header left">
+        <span class="section-label">战争背景</span>
+        <h2>这场战争<br>是如何开始的</h2>
+        <p class="section-intro">从2023年加沙战争的引爆，到2026年2月28日的突袭，这场冲突有其深刻的历史根源。</p>
+      </div>
+
+      <!-- Accordion narrative -->
+      <div class="bg-accordion">
+        <div class="acc-item open">
+          <button class="acc-trigger">
+            <span class="acc-icon">01</span>
+            <span class="acc-title">根源：核问题与"抵抗轴心"</span>
+            <span class="acc-chevron">↓</span>
+          </button>
+          <div class="acc-body">
+            <p>数十年来，伊朗核计划始终是中东地区的核心紧张来源。2023年10月，哈马斯对以色列发动袭击，伊朗支持的"抵抗轴心"——真主党、胡塞武装、伊拉克民兵——全面激活，使冲突规模骤然升级。2024年，以色列与伊朗两度直接交火，打破了两国多年代理人作战的默契。</p>
+          </div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-trigger">
+            <span class="acc-icon">02</span>
+            <span class="acc-title">导火索：谈判破裂与奇袭</span>
+            <span class="acc-chevron">↓</span>
+          </button>
+          <div class="acc-body">
+            <p>2025年6月，美以联合发动"十二天战争"，空袭伊朗核设施，停火后核问题仍悬而未决。2026年2月，谈判重启，伊朗释放积极信号。然而2月28日，美以突然发动"史诗狂怒行动"，最高领袖哈梅内伊遇刺身亡，全面战争就此爆发。</p>
+          </div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-trigger">
+            <span class="acc-icon">03</span>
+            <span class="acc-title">扩散：从海峡到全球</span>
+            <span class="acc-chevron">↓</span>
+          </button>
+          <div class="acc-body">
+            <p>战争爆发三天后，伊朗宣布封锁霍尔木兹海峡，IEA称其为"史上最大供应中断"，全球油价单日飙升超30%。战火随后蔓延至黎巴嫩，伊朗向多个海湾国家发动逾660次导弹袭击。4月8日临时停火，但截至2026年6月，谈判持续僵持。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vertical timeline -->
+      <div class="bg-timeline">
+        <div class="bt-item key" data-lat="31.5" data-lng="34.8">
+          <div class="bt-dot"></div>
+          <div class="bt-content">
+            <span class="bt-date">2023年10月</span>
+            <span class="bt-title">哈马斯袭击以色列，加沙战争爆发</span>
+          </div>
+        </div>
+        <div class="bt-item" data-lat="33.5" data-lng="44.0">
+          <div class="bt-dot"></div>
+          <div class="bt-content">
+            <span class="bt-date">2024年4–10月</span>
+            <span class="bt-title">以色列与伊朗两度直接交火</span>
+          </div>
+        </div>
+        <div class="bt-item" data-lat="35.7" data-lng="51.4">
+          <div class="bt-dot"></div>
+          <div class="bt-content">
+            <span class="bt-date">2025年6月</span>
+            <span class="bt-title">"十二天战争"，空袭伊朗核设施</span>
+          </div>
+        </div>
+        <div class="bt-item" data-lat="35.7" data-lng="51.4">
+          <div class="bt-dot"></div>
+          <div class="bt-content">
+            <span class="bt-date">2026年1月</span>
+            <span class="bt-title">伊朗爆发最大规模抗议，政府镇压</span>
+          </div>
+        </div>
+        <div class="bt-item key" data-lat="35.7" data-lng="51.4">
+          <div class="bt-dot"></div>
+          <div class="bt-content">
+            <span class="bt-date">2026年2月28日</span>
+            <span class="bt-title">"史诗狂怒行动"，哈梅内伊遇刺，战争爆发</span>
+          </div>
+        </div>
+        <div class="bt-item key" data-lat="26.5" data-lng="56.3">
+          <div class="bt-dot"></div>
+          <div class="bt-content">
+            <span class="bt-date">2026年3月2日</span>
+            <span class="bt-title">封锁霍尔木兹海峡，油价单日暴涨30%</span>
+          </div>
+        </div>
+        <div class="bt-item" data-lat="33.9" data-lng="35.5">
+          <div class="bt-dot"></div>
+          <div class="bt-content">
+            <span class="bt-date">2026年3–4月</span>
+            <span class="bt-title">战火蔓延黎巴嫩，逾660次导弹袭击</span>
+          </div>
+        </div>
+        <div class="bt-item" data-lat="30.0" data-lng="50.0">
+          <div class="bt-dot"></div>
+          <div class="bt-content">
+            <span class="bt-date">2026年4月8日</span>
+            <span class="bt-title">巴基斯坦斡旋，达成临时停火</span>
+          </div>
+        </div>
+        <div class="bt-item key current" data-lat="32.0" data-lng="53.0">
+          <div class="bt-dot"></div>
+          <div class="bt-content">
+            <span class="bt-date">2026年6月 · 至今</span>
+            <span class="bt-title">谈判僵持，军事行动随时可能重启</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: sticky map -->
+    <div class="bg-map-wrap">
+      <div id="bg-map"></div>
+      <div class="bg-map-label" id="bg-map-label">中东局势地图</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     THREE IMPACT ENTRIES
+══════════════════════════════════════ -->
+<section id="impacts-section">
+  <div class="section-header">
+    <span class="section-label">三重冲击</span>
+    <h2>战争的代价</h2>
+    <p class="section-intro">从战场的伤痛，到能源的震荡，再到每个人餐桌上的变化</p>
+  </div>
+
+  <div class="impact-cards">
+
+    <a class="impact-card" href="pages/humanitarian.html" id="card-humanitarian">
+      <div class="card-number">01</div>
+      <div class="card-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="14" r="7" stroke="currentColor" stroke-width="2"/>
+          <path d="M8 40c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M24 28v12M18 34h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h3 class="card-title">人道影响</h3>
+      <p class="card-desc">各方确认死亡逾9,000人，黎巴嫩160万人流离失所。战争造成的平民伤亡、基础设施的系统性破坏，是最直接的人类代价。</p>
+      <div class="card-stat">
+        <span class="cs-num" data-target="9000" data-suffix="+">0</span>
+        <span class="cs-label">确认死亡</span>
+      </div>
+      <div class="card-cta">
+        <span>探索</span>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="card-bg-text">HUMAN</div>
+    </a>
+
+    <a class="impact-card" href="pages/energy.html" id="card-energy">
+      <div class="card-number">02</div>
+      <div class="card-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 4L6 28h18l-4 16 22-24H24L28 4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3 class="card-title">能源影响</h3>
+      <p class="card-desc">霍尔木兹海峡封锁令布伦特原油峰值突破120美元/桶，2026年全球能源价格预测上涨24%，能源供应链面临历史性重构。</p>
+      <div class="card-stat">
+        <span class="cs-num" data-prefix="$" data-target="120" data-suffix="/桶">0</span>
+        <span class="cs-label">油价峰值</span>
+      </div>
+      <div class="card-cta">
+        <span>探索</span>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="card-bg-text">ENERGY</div>
+    </a>
+
+    <a class="impact-card" href="pages/price.html" id="card-price">
+      <div class="card-number">03</div>
+      <div class="card-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 4v40M14 10h15a7 7 0 010 14H14m0 0h16a7 7 0 010 14H14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3 class="card-title">物价影响</h3>
+      <p class="card-desc">油价上涨传导至化肥、粮食和运输成本，发展中国家2026年通胀预测达5.1%。世界银行估计，最贫困人口将首当其冲。</p>
+      <div class="card-stat">
+        <span class="cs-num" data-target="5.1" data-suffix="%" data-decimals="1">0</span>
+        <span class="cs-label">发展中国家通胀预测</span>
+      </div>
+      <div class="card-cta">
+        <span>探索</span>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="card-bg-text">PRICE</div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     EPILOGUE / CLOSING
+══════════════════════════════════════ -->
+<section id="epilogue">
+  <div class="epilogue-inner">
+
+    <div class="epi-quote-block">
+      <blockquote class="epi-quote">
+        "战争正在以累积浪潮冲击全球经济——首先是能源价格上涨，然后是食品价格上涨，最终是通胀，让债务更加昂贵。<strong>最贫困的人，首当其冲。</strong>"
+      </blockquote>
+      <cite class="epi-cite">— 世界银行首席经济学家 Indermit Gill，2026年4月</cite>
+    </div>
+
+    <div class="epi-grid">
+      <div class="epi-stat-block">
+        <div class="epi-label">全球经济损失（估算区间）</div>
+        <div class="epi-num">$590B — $3.5T</div>
+        <div class="epi-sub">取决于冲突持续时长，占全球GDP的0.54%至3.15%</div>
+      </div>
+      <div class="epi-stat-block">
+        <div class="epi-label">战争状态</div>
+        <div class="epi-num ongoing">仍在进行中</div>
+        <div class="epi-sub">截至2026年6月6日，谈判僵持，各方数据持续更新</div>
+      </div>
+      <div class="epi-stat-block">
+        <div class="epi-label">核不扩散体系</div>
+        <div class="epi-num">历史性压力</div>
+        <div class="epi-sub">新START条约已于2026年2月到期，无继任协议；核扩散风险上升</div>
+      </div>
+    </div>
+
+    <div class="epi-closing">
+      <p class="epi-closing-text">数字会更新，战争还在继续。每一个统计数字背后，是无数个无法被计量的故事。</p>
+      <div class="epi-sources">
+        <span class="epi-sources-title">数据来源</span>
+        <div class="epi-sources-list">
+          <span>HRANA（伊朗人权活动人士）</span>
+          <span>黎巴嫩卫生部</span>
+          <span>美国中央司令部 CENTCOM</span>
+          <span>国际能源署 IEA</span>
+          <span>世界银行《大宗商品市场展望》2026年4月</span>
+          <span>ACLED · Middle East Overview</span>
+          <span>Chatham House · 核扩散风险分析</span>
+          <span>英国下议院图书馆 · 冲突背景报告</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer id="site-footer">
+  <div class="footer-inner">
+    <p class="footer-title">美伊战争：冲击与涟漪</p>
+    <p class="footer-credit">数据叙事小组作业 · 数据截至 2026年6月6日</p>
+  </div>
+</footer>
+
+<!-- RIGHT SIDE PROGRESS NAV -->
+<nav id="progress-nav">
+  <a class="pn-item active" href="#hero" data-section="hero">
+    <span class="pn-dot"></span>
+    <span class="pn-label">首屏</span>
+  </a>
+  <a class="pn-item" href="#background" data-section="background">
+    <span class="pn-dot"></span>
+    <span class="pn-label">战争背景</span>
+  </a>
+  <a class="pn-item" href="#impacts-section" data-section="impacts-section">
+    <span class="pn-dot"></span>
+    <span class="pn-label">三重冲击</span>
+  </a>
+  <a class="pn-item" href="#epilogue" data-section="epilogue">
+    <span class="pn-dot"></span>
+    <span class="pn-label">结语</span>
+  </a>
+</nav>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
