@@ -65,8 +65,15 @@ iran-war-project/
 
 ---
 
-## GitHub 协作建议
+## GitHub 协作流程
 
-- 每人在自己负责的 branch 上开发（如 `feature/humanitarian`）
-- 完成后发 Pull Request 合并到 `main`
-- **不要修改其他人负责的文件**，避免冲突
+**各组员：**
+1. 从 `main` 拉取最新代码
+2. 创建自己的分支（如 `feature/humanitarian`），在该分支上开发
+3. 完成后 push 到自己的分支，**不要直接 push 到 `main`**
+4. 发 Pull Request，等待负责人统一 merge
+
+**首页负责人：**
+- 所有人完成后，统一 review 并 merge 到 `main`
+
+**注意：不要修改其他人负责的文件，避免冲突**
