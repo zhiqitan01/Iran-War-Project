@@ -180,37 +180,77 @@
 </section>
 
 <!-- ══════════════════════════════════════
+     HUMANITARIAN SUMMARY STRIP
+══════════════════════════════════════ -->
+<section id="humanitarian-strip">
+  <div class="hum-strip-inner">
+    <div class="hum-strip-label">
+      <span class="section-label">人道代价</span>
+      <p class="hum-strip-note">战争最直接的伤害发生在战场内部。以下数字，是这场冲突留下的最沉重注脚。</p>
+    </div>
+    <div class="hum-strip-stats">
+      <div class="hum-stat">
+        <span class="hum-num" data-target="9000" data-suffix="+">0</span>
+        <span class="hum-label">各方确认死亡</span>
+        <span class="hum-source">HRANA · ACLED</span>
+      </div>
+      <div class="hum-stat">
+        <span class="hum-num" data-target="160" data-suffix="万+">0</span>
+        <span class="hum-label">黎巴嫩流离失所人口</span>
+        <span class="hum-source">UNHCR</span>
+      </div>
+      <div class="hum-stat">
+        <span class="hum-num" data-target="40" data-suffix="%">0</span>
+        <span class="hum-label">加沙医疗设施受损比例</span>
+        <span class="hum-source">WHO</span>
+      </div>
+      <div class="hum-stat">
+        <span class="hum-num" data-target="660" data-suffix="次+">0</span>
+        <span class="hum-label">伊朗对海湾国家导弹袭击</span>
+        <span class="hum-source">CENTCOM</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
      THREE IMPACT ENTRIES
 ══════════════════════════════════════ -->
 <section id="impacts-section">
   <div class="section-header">
     <span class="section-label">三重冲击</span>
-    <h2>战争的代价</h2>
-    <p class="section-intro">从战场的伤痛，到能源的震荡，再到每个人餐桌上的变化</p>
+    <h2>战争向外扩散的涟漪</h2>
+    <p class="section-intro">从交通航线中断，到能源市场震荡，再到每个人餐桌上的变化</p>
   </div>
 
   <div class="impact-cards">
 
-    <a class="impact-card" href="pages/humanitarian.html" id="card-humanitarian">
+    <a class="impact-card" href="pages/transport.html" id="card-transport">
       <div class="card-number">01</div>
       <div class="card-icon">
         <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="24" cy="14" r="7" stroke="currentColor" stroke-width="2"/>
-          <path d="M8 40c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <path d="M24 28v12M18 34h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M6 24h36M24 6v36" stroke="currentColor" stroke-width="0" />
+          <!-- Ship hull -->
+          <path d="M8 30 L16 18 L32 18 L40 30 L8 30Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <!-- Mast/funnel -->
+          <path d="M24 18V10M20 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <!-- Waves -->
+          <path d="M4 36 Q10 33 16 36 Q22 39 28 36 Q34 33 40 36 Q44 37.5 46 36" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          <!-- Plane -->
+          <path d="M30 10 L44 14 L38 16 L34 24 L31 22 L33 16 L28 15Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
         </svg>
       </div>
-      <h3 class="card-title">人道影响</h3>
-      <p class="card-desc">各方确认死亡逾9,000人，黎巴嫩160万人流离失所。战争造成的平民伤亡、基础设施的系统性破坏，是最直接的人类代价。</p>
+      <h3 class="card-title">交通影响</h3>
+      <p class="card-desc">霍尔木兹海峡封锁导致全球海运秩序重组，中东航空禁区迫使航线大幅绕行，全球运费与保险成本急剧攀升。</p>
       <div class="card-stat">
-        <span class="cs-num" data-target="9000" data-suffix="+">0</span>
-        <span class="cs-label">确认死亡</span>
+        <span class="cs-num" data-target="20" data-suffix="%">0</span>
+        <span class="cs-label">全球石油贸易受阻比例</span>
       </div>
       <div class="card-cta">
         <span>探索</span>
         <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
-      <div class="card-bg-text">HUMAN</div>
+      <div class="card-bg-text">TRANSIT</div>
     </a>
 
     <a class="impact-card" href="pages/energy.html" id="card-energy">

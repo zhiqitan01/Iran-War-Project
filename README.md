@@ -14,11 +14,11 @@ iran-war-project/
 │   └── subpage.css         # 子页面共享样式
 ├── js/
 │   ├── main.js             # 首页逻辑（地图、涟漪、时间线、入场动画）
-│   ├── humanitarian.js     # ← 人道影响组员填写
+│   ├── transport.js        # ← 交通影响组员填写
 │   ├── energy.js           # ← 能源影响组员填写
 │   └── price.js            # ← 物价影响组员填写
 └── pages/
-    ├── humanitarian.html   # 人道影响页
+    ├── transport.html      # 交通影响页
     ├── energy.html         # 能源影响页
     └── price.html          # 物价影响页
 ```
@@ -30,7 +30,7 @@ iran-war-project/
 | 文件 | 负责人 | 主要任务 |
 |------|--------|---------|
 | `index.html` + `css/style.css` + `js/main.js` | 陈紫琪 | 首页、整体框架 |
-| `pages/humanitarian.html` + `js/humanitarian.js` | 林恺 | 人道影响内容 |
+| `pages/transport.html` + `js/transport.js` | 林恺 | 交通影响内容 |
 | `pages/energy.html` + `js/energy.js` | 张颢篷 | 能源影响内容 |
 | `pages/price.html` + `js/price.js` | 吴佩晴 | 物价影响内容 |
 
@@ -40,7 +40,7 @@ iran-war-project/
 
 ### 1. 子页面 JS 文件
 
-打开对应的 `js/humanitarian.js` / `energy.js` / `price.js`，按文件内注释填写：
+打开对应的 `js/transport.js` / `energy.js` / `price.js`，按文件内注释填写：
 - 统计数据（`stats` 数组）
 - 图表（取消对应注释，填入真实数据）
 - 地图标注（energy.js 中的 Leaflet 图层）

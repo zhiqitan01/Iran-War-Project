@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>交通影响 — 美伊战争</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/subpage.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Noto+Serif+SC:wght@400;600&family=Space+Mono&display=swap" rel="stylesheet" />
+  <!--
+    如需图表库，在此引入：
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+  -->
+</head>
+<body class="subpage">
+
+  <nav class="subpage-nav">
+    <a href="../index.html" class="nav-back">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M19 12H5M12 5l-7 7 7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      返回首页
+    </a>
+    <div class="nav-chapter">
+      <span class="nav-num">01 / 03</span>
+      <span class="nav-title">交通影响</span>
+    </div>
+    <div class="nav-chapters">
+      <a href="transport.html" class="active">交通</a>
+      <a href="energy.html">能源</a>
+      <a href="price.html">物价</a>
+    </div>
+  </nav>
+
+  <header class="subpage-hero" style="--accent: #d64030;">
+    <div class="subpage-hero-inner">
+      <span class="section-label">01 交通影响</span>
+      <h1 class="subpage-title">
+        航线中断的<br><em>代价</em>
+      </h1>
+      <p class="subpage-lead">
+        <!-- 此处填写本章导言，2–3句话 -->
+        霍尔木兹海峡封锁、中东航空禁区扩张——这场战争正在重写全球交通的路线图，代价由全世界共同承担。
+      </p>
+    </div>
+  </header>
+
+  <main class="subpage-main">
+
+    <!-- 模块 1：霍尔木兹海峡航运中断 -->
+    <section class="content-block">
+      <div class="block-header">
+        <h2>霍尔木兹海峡：航运中断</h2>
+        <p class="block-subtitle">全球约20%的石油贸易经此通道，封锁影响波及全球供应链</p>
+      </div>
+      <div class="text-chart-layout">
+        <div class="text-col">
+          <p><!-- 正文段落 1：海峡封锁背景与规模 --></p>
+          <p><!-- 正文段落 2：对全球航运的直接冲击 --></p>
+        </div>
+        <div class="chart-col">
+          <!-- transport.js 负责渲染，可用 Leaflet 地图或 Chart.js -->
+          <div id="chart-strait-shipping" class="chart-placeholder">
+            <span>图表加载中…</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模块 2：航空禁区与航线绕行 -->
+    <section class="content-block">
+      <div class="block-header">
+        <h2>中东航空禁区与航线绕行</h2>
+        <p class="block-subtitle">伊朗、伊拉克领空关闭，航班被迫大幅绕行增加飞行时间与成本</p>
+      </div>
+      <div class="text-chart-layout">
+        <div class="text-col">
+          <p><!-- 正文段落 1：航空禁区范围 --></p>
+          <p><!-- 正文段落 2：主要受影响航线（亚欧航班为主） --></p>
+        </div>
+        <div class="chart-col">
+          <div id="chart-flight-routes" class="chart-placeholder">
+            <span>图表加载中…</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模块 3：运费与保险成本上涨 -->
+    <section class="content-block">
+      <div class="block-header">
+        <h2>全球运费与保险成本</h2>
+        <p class="block-subtitle">战争风险溢价推高航运保险，波罗的海干散货指数剧烈波动</p>
+      </div>
+      <div id="chart-freight-cost" class="chart-placeholder">
+        <span>图表加载中…</span>
+      </div>
+    </section>
+
+  </main>
+
+  <nav class="chapter-nav">
+    <div class="chapter-nav-item prev disabled">
+      <span class="ch-label">上一章</span>
+      <span class="ch-title">—</span>
+    </div>
+    <div class="chapter-nav-item next">
+      <a href="energy.html">
+        <span class="ch-label">下一章</span>
+        <span class="ch-title">能源影响 →</span>
+      </a>
+    </div>
+  </nav>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="../js/transport.js"></script>
+
+</body>
+</html>

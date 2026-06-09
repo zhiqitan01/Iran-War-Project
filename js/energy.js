@@ -74,8 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // }
 
 
-  // ── 3. 航运风险图表 ──────────────────────────────────────────
-  // const shippingContainer = document.getElementById('chart-shipping');
+  // ── 3. 能源供应链重构图表 ─────────────────────────────────────
+  // 推荐：用 Chart.js 柱状图对比各国能源来源转移，或 ECharts 桑基图
+  // const supplyContainer = document.getElementById('chart-energy-supply');
   // ...
 
 
