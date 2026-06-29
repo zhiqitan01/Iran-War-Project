@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>能源影响 — 美伊战争</title>
+  <title>能源影响 - 美伊战争</title>
+  <link rel="icon" href="data:," />
   <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/subpage.css" />
+  <link rel="stylesheet" href="../css/subpage.css?v=real-searoute-20260629-2" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Noto+Serif+SC:wght@400;600&family=Space+Mono&display=swap" rel="stylesheet" />
 </head>
-<body class="subpage">
+<body class="subpage energy-page">
 
   <nav class="subpage-nav">
     <a href="../index.html" class="nav-back">
@@ -27,59 +28,209 @@
     </div>
   </nav>
 
-  <header class="subpage-hero" style="--accent: #e8a838;">
-    <div class="subpage-hero-inner">
+  <header class="subpage-hero energy-hero" style="--accent: #e8a838;">
+    <div id="energy-hero-field" class="energy-hero-field" aria-hidden="true"></div>
+    <div class="subpage-hero-inner energy-hero-inner">
       <span class="section-label">02 能源影响</span>
+      <p class="energy-kicker">霍尔木兹海峡 / 全球能源运输</p>
       <h1 class="subpage-title">
-        咽喉要道的<br><em>震荡</em>
+        从 138 艘到个位数<br><em>霍尔木兹通行骤降如何改写能源航运</em>
       </h1>
       <p class="subpage-lead">
-        <!-- 此处填写本章导言 -->
-        全球约20%的石油贸易经过霍尔木兹海峡。当战争阴云笼罩这条航道，整个世界的能源命脉都在屏息等待。
+        2026 年 2 月初，霍尔木兹海峡附近每日仍有约 138 艘油气船通行。2 月 28 日后，过峡船只降至个位数。船舶滞留、保险重估和合同审查，开始把局部封锁转化为能源运输成本。
       </p>
     </div>
   </header>
 
-  <main class="subpage-main">
+  <main class="subpage-main energy-main energy-map-main">
+    <section class="content-block master-map-story" aria-label="单地图能源叙事">
+      <div class="story-intro">
+        <span class="section-label">从海峡到加油站</span>
+        <h2>船先停下，成本随后上岸</h2>
+        <p>
+          这条叙事从限制前的通行基线开始：船只在海峡内保持高频穿行。限制发布后，低速等待、保险重估和合规审查逐步叠加，并沿原油、LNG 和成品油航线进入进口成本。
+        </p>
+      </div>
 
-    <!-- 模块 1：霍尔木兹海峡地图 -->
-    <section class="content-block">
-      <div class="block-header">
-        <h2>霍尔木兹海峡：全球能源咽喉</h2>
-      </div>
-      <!-- energy.js 可在此初始化一个聚焦海峡的 Leaflet 地图 -->
-      <div id="map-strait" class="chart-placeholder" style="height:420px;">
-        <span>地图加载中…</span>
-      </div>
-    </section>
+      <div class="story-board">
+        <div class="master-map-shell">
+          <div id="energy-master-map" class="master-map chart-placeholder">
+            <span>地图加载中...</span>
+          </div>
 
-    <!-- 模块 2：油价走势图 -->
-    <section class="content-block">
-      <div class="block-header">
-        <h2>油价波动</h2>
-        <p class="block-subtitle">冲突期间的国际原油价格变化</p>
-      </div>
-      <div class="text-chart-layout">
-        <div class="text-col">
-          <p><!-- 正文段落 1 --></p>
-          <p><!-- 正文段落 2 --></p>
-        </div>
-        <div class="chart-col">
-          <div id="chart-oil-price" class="chart-placeholder">
-            <span>图表加载中…</span>
+          <aside class="chapter-takeover" id="chapter-takeover" aria-live="polite" aria-hidden="true">
+            <span id="chapter-takeover-kicker">01 / 2026 年 2 月初</span>
+            <strong id="chapter-takeover-title">限制前，海峡仍维持高频通行</strong>
+            <p id="chapter-takeover-body">2 月初，霍尔木兹海峡附近每日约 138 艘油气船通过。</p>
+            <div class="chapter-takeover-metrics">
+              <div><span id="chapter-takeover-label-metric">通行基线</span><b id="chapter-takeover-metric">约 138 艘/日</b></div>
+              <div><span id="chapter-takeover-label-scale">观察期</span><b id="chapter-takeover-scale">2 月初</b></div>
+            </div>
+          </aside>
+
+          <div class="master-map-console" aria-live="polite">
+            <span id="master-scene-kicker">01 / 2026 年 2 月初</span>
+            <strong id="master-scene-title">限制前，海峡仍维持高频通行</strong>
+            <p id="master-scene-body">2 月初，霍尔木兹海峡附近每日约 138 艘油气船通过。</p>
+            <div class="master-metrics">
+              <div><span id="master-metric-label-main">通行基线</span><b id="master-metric-main">约 138 艘/日</b></div>
+              <div><span id="master-metric-label-scale">观察期</span><b id="master-metric-scale">2 月初</b></div>
+            </div>
+          </div>
+
+          <div class="map-timeline-ribbon" aria-label="地图叙事时间线">
+            <button type="button" data-scene="flow-before" class="is-active">通行</button>
+            <button type="button" data-scene="blockade">等待</button>
+            <button type="button" data-scene="policy">事件</button>
+            <button type="button" data-scene="open-close">反复</button>
+            <button type="button" data-scene="world-routes">全球</button>
+            <button type="button" data-scene="voyage">单船</button>
+            <button type="button" data-scene="invoice">账单</button>
+            <button type="button" data-scene="global-prices">价格</button>
+          </div>
+
+          <div class="ais-source-badge" id="ais-source-badge">
+            <span>通行基线 · 2026 年 2 月初</span>
+            <strong>通常约 138 艘/日</strong>
+          </div>
+
+          <aside class="event-detail-panel" id="event-detail-panel" aria-live="polite" aria-label="事件详情">
+            <button type="button" id="event-detail-close" aria-label="关闭事件详情">×</button>
+            <span id="event-detail-date">2025.02</span>
+            <strong id="event-detail-title">美国重启“极限施压”</strong>
+            <p id="event-detail-body">2025 年 2 月，白宫恢复针对伊朗石油出口及相关交易的最大压力政策。</p>
+            <small id="event-detail-note">船东、银行和保险商随后加强对货主、船籍与目的港的核验。</small>
+            <em id="event-detail-source">White House NSPM-2</em>
+          </aside>
+
+          <svg class="event-screen-leader" id="event-screen-leader" aria-hidden="true">
+            <line id="event-screen-leader-line" x1="0" y1="0" x2="0" y2="0"></line>
+            <circle id="event-screen-leader-dot" cx="0" cy="0" r="4"></circle>
+          </svg>
+
+          <div class="ship-click-prompt" id="ship-click-prompt" aria-hidden="true">
+            <span>YUAN GUI YANG</span>
+            <strong>点击油轮查看航程账单</strong>
+          </div>
+
+          <div class="invoice-transition" id="invoice-transition" aria-hidden="true">
+            <i class="invoice-transition-dot"></i>
+            <i class="invoice-transition-line"></i>
+            <span>保险、等待与审查计入成本</span>
+          </div>
+
+          <aside class="floating-invoice" id="floating-invoice" aria-label="油轮航程成本账单">
+            <div class="invoice-strip-head">
+              <span>海运战争险批单</span>
+              <strong>海湾航程成本账单</strong>
+            </div>
+            <div class="invoice-mini-meta">
+              <div><span>船舶</span><strong id="invoice-vessel-name">YUAN GUI YANG</strong></div>
+              <div><span>风险水域</span><strong>霍尔木兹海峡</strong></div>
+              <div><span>计价基准</span><strong id="invoice-ais-basis">实际航迹 + 成本指数</strong></div>
+            </div>
+            <div class="invoice-mini-rows">
+              <div><span>基础运费</span><b>100</b></div>
+              <div><span>战争险附加费</span><b>+38</b></div>
+              <div><span>等待 / 改港成本</span><b>+24</b></div>
+              <div><span>绕行 / 调度成本</span><b>+31</b></div>
+              <div><span>合规审查成本</span><b>+17</b></div>
+            </div>
+            <div class="invoice-d3-stack" id="invoice-d3-stack" aria-label="到岸运输成本构成图"></div>
+            <div class="invoice-mini-total">
+              <span>到岸运输成本指数</span>
+              <strong>210</strong>
+            </div>
+            <p><b id="invoice-source-line">实线为实际航迹；虚线依据目的地字段接入海运网络。</b>基础运费设为 100；其余分项为相对增量，并非船东实际报价。</p>
+          </aside>
+
+          <aside class="region-price-panel" id="region-price-panel" aria-label="地区能源价格影响面板">
+            <div class="region-panel-head">
+              <span id="price-panel-kicker">美国 / 汽油零售价 / 2026 年</span>
+              <strong id="price-panel-title">美国汽油价格冲高后回落</strong>
+              <p id="price-panel-body">1 月末为每升 0.85 美元，5 月升至每升 1.27 美元；截至 6 月 22 日回落至每升 1.13 美元。</p>
+              <div class="price-d3-strip" id="price-d3-strip" aria-label="所选国家 2026 年月末汽油零售价"></div>
+            </div>
+            <div class="region-tabs" aria-label="地区切换">
+              <button type="button" data-region="global" class="is-active">全球</button>
+              <button type="button" data-region="north-america">北美</button>
+              <button type="button" data-region="europe">欧洲</button>
+              <button type="button" data-region="asia">亚洲</button>
+              <button type="button" data-region="africa">非洲</button>
+              <button type="button" data-region="south-america">南美</button>
+              <button type="button" data-region="oceania">大洋洲</button>
+            </div>
+            <div class="region-price-list" id="region-price-list"></div>
+            <small id="price-panel-source">数据：GlobalPetrolPrices。柱为每月最后一个公开周的 95 号汽油全国平均零售价，按当地货币计价；6 月为 6 月 22 日。</small>
+          </aside>
+
+          <div class="map-legend">
+            <span><i class="legend-ship"></i>船舶</span>
+            <span><i class="legend-route"></i>能源航线</span>
+            <span><i class="legend-risk"></i>通行限制</span>
+            <span><i class="legend-price"></i>汽油价格</span>
           </div>
         </div>
+
+        <div class="story-scroll" aria-label="地图叙事步骤">
+          <article class="story-step is-active" data-scene="flow-before">
+            <span>01 / 2026 年 2 月初</span>
+            <h3>限制前：每日约 138 艘油气船通过</h3>
+            <p>2 月初，油气船仍按高频节奏穿越霍尔木兹海峡。这一水平构成后续通行骤降的基线。</p>
+          </article>
+          <article class="story-step" data-scene="blockade">
+            <span>02 / 2026 年 2 月 28 日</span>
+            <h3>2 月 28 日后：过峡船舶降至个位数</h3>
+            <p>通行限制发布后，部分船只在海峡两端低速等待，航线、保险与装卸安排随之重估。</p>
+          </article>
+          <article class="story-step" data-scene="policy">
+            <span>03 / 2025 年 2 月</span>
+            <h3>船未开动，合同与保险已先调整</h3>
+            <p>“极限施压”、影子船队制裁和战争险上调，使船东、保险商和买家重新核验船籍、货主与目的港。</p>
+          </article>
+          <article class="story-step" data-scene="open-close">
+            <span>04 / 2026 年 3 月</span>
+            <h3>反复开放与关闭推高等待成本</h3>
+            <p>护航、放行和再次收紧交替出现。即使船只不改道，等待、改港和审查也会按天进入运输成本。</p>
+          </article>
+          <article class="story-step" data-scene="world-routes">
+            <span>05 / 2026 年 3 月下旬</span>
+            <h3>一个窄口影响七条能源航线</h3>
+            <p>当海峡从正常水道变成少数船只试探通行的通道，排队和保费会沿原油、LNG 和成品油航线离开海湾。</p>
+          </article>
+          <article class="story-step" data-scene="voyage">
+            <span>06 / 2026 年 3 月 14 日</span>
+            <h3>其中一艘油轮，目的地是山东</h3>
+            <p>真实船位记录里，YUAN GUI YANG 出现在海湾内，报港字段指向 CN SDG。镜头从全球收回到这一艘船。</p>
+          </article>
+          <article class="story-step" data-scene="invoice">
+            <span>07 / 2026 年 3 月以后</span>
+            <h3>等待、改港与审查进入航程账单</h3>
+            <p>战争险、等待、改港和合规审查依次叠加。以正常航程为 100，案例账单中的成本指数升至 210。</p>
+          </article>
+          <article class="story-step" data-scene="global-prices">
+            <span>08 / 2026 年 6 月 22 日</span>
+            <h3>海峡重开后，零售价格分化</h3>
+            <p>美国汽油价在 5 月见顶后回落，南非到 6 月仍在上涨，沙特保持不变；同一场运输冲击被各地税费、补贴和汇率改写。</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- 模块 3：航运风险 -->
-    <section class="content-block">
-      <div class="block-header">
-        <h2>航运中断风险</h2>
-      </div>
-      <div id="chart-shipping" class="chart-placeholder">
-        <span>图表加载中…</span>
-      </div>
+    <section class="energy-sources" aria-label="能源页来源">
+      <span>主要来源</span>
+      <a href="https://www.eia.gov/todayinenergy/detail.php?id=65504">EIA: Strait of Hormuz oil chokepoint</a>
+      <a href="https://www.eia.gov/todayinenergy/detail.php?id=65584">EIA: LNG through Hormuz</a>
+      <a href="https://www.iea.org/about/oil-security-and-emergency-response/strait-of-hormuz">IEA: Strait of Hormuz</a>
+      <a href="https://unctad.org/system/files/official-document/osgttinf2026d1_en.pdf">UNCTAD: Hormuz disruptions</a>
+      <a href="https://www.marketwatch.com/story/only-about-8-ships-a-day-are-passing-through-the-strait-of-hormuz-94-fewer-than-usual-806837f9?eafs_enabled=false">MarketWatch: Hormuz traffic collapse</a>
+      <a href="https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-05-20-2026/card/three-oil-tankers-cross-strait-of-hormuz-sjpfjtk6AWYqVydbK8yq">WSJ: three oil tankers cross Hormuz</a>
+      <a href="https://www.whitehouse.gov/presidential-actions/2025/02/national-security-presidential-memorandum-nspm-2/">White House: NSPM-2</a>
+      <a href="https://home.treasury.gov/news/press-releases/sb0341">Treasury: shadow fleet sanctions</a>
+      <a href="https://www.spglobal.com/energy/en/news-research/latest-news/shipping/033026-war-risk-insurance-cost-off-highs-but-still-elevated-in-persian-gulf">S&amp;P Global: war risk insurance</a>
+      <a href="https://www.globalpetrolprices.com/gasoline_prices/">GlobalPetrolPrices: gasoline prices by country</a>
+      <a href="https://www.globalpetrolprices.com/fuel_price_trend_Iran_war.php">GlobalPetrolPrices: fuel price trends since Iran war</a>
+      <a href="https://huggingface.co/datasets/yasumorishima/hormuz-ais">Hugging Face: Hormuz AIS positions</a>
     </section>
 
   </main>
@@ -100,8 +251,15 @@
   </nav>
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.3.24/dist/lenis.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="../js/energy.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.24/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5@2.3.0/lib/p5.min.js"></script>
+  <script src="../js/energy.js?v=real-searoute-20260629-2"></script>
+  <script src="../js/energy-polish.js?v=real-searoute-20260629-2"></script>
 
 </body>
 </html>
