@@ -131,60 +131,83 @@ if (bgMapEl) {
   });
 }
 
-function flyBgMap(lat, lng, label) {
-  if (!bgMap) return;
-  if (bgMarker) bgMap.removeLayer(bgMarker);
-
-  const icon = L.divIcon({
-    className: '',
-    html: `<div style="width:12px;height:12px;border-radius:50%;background:#d64030;box-shadow:0 0 0 0 rgba(214,64,48,0.6);animation:bgPing 1.4s ease-out infinite;"></div>`,
-    iconSize: [12, 12], iconAnchor: [6, 6],
-  });
-  bgMarker = L.marker([lat, lng], { icon }).addTo(bgMap);
-  bgMap.flyTo([lat, lng], 5, { duration: 0.7, easeLinearity: 0.4 });
-
-  const labelEl = document.getElementById('bg-map-label');
-  if (labelEl) labelEl.textContent = label;
-
-  if (!document.getElementById('bg-ping-kf')) {
-    const s = document.createElement('style');
-    s.id = 'bg-ping-kf';
-    s.textContent = `@keyframes bgPing{0%{box-shadow:0 0 0 0 rgba(214,64,48,0.7)}70%{box-shadow:0 0 0 16px rgba(214,64,48,0)}100%{box-shadow:0 0 0 0 rgba(214,64,48,0)}}`;
-    document.head.appendChild(s);
-  }
-}
-
 // ─────────────────────────────────────
-// 4. TIMELINE — entrance + map flyTo
+// 4. TIMELINE — entrance + scroll-driven marker
 // ─────────────────────────────────────
 const btItems = document.querySelectorAll('.bt-item');
 
-const btObserver = new IntersectionObserver((entries) => {
+// 入场动画
+const btEntranceObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      // Stagger entrance per item index
       const idx = Array.from(btItems).indexOf(entry.target);
-      setTimeout(() => {
-        entry.target.classList.add('visible');
-      }, idx * 70);
-      btObserver.unobserve(entry.target);
+      setTimeout(() => entry.target.classList.add('visible'), idx * 70);
+      btEntranceObserver.unobserve(entry.target);
     }
   });
 }, { threshold: 0.2 });
 
-btItems.forEach(el => btObserver.observe(el));
+btItems.forEach(el => btEntranceObserver.observe(el));
 
-// Click or hover → fly bg map
-btItems.forEach(item => {
-  item.addEventListener('mouseenter', () => {
-    btItems.forEach(i => i.classList.remove('active'));
-    item.classList.add('active');
-    const lat = parseFloat(item.dataset.lat);
-    const lng = parseFloat(item.dataset.lng);
-    const title = item.querySelector('.bt-title')?.textContent || '';
-    if (!isNaN(lat)) flyBgMap(lat, lng, title);
+// 注入 bgPing 动画
+if (!document.getElementById('bg-ping-kf')) {
+  const s = document.createElement('style');
+  s.id = 'bg-ping-kf';
+  s.textContent = `@keyframes bgPing{
+    0%  { box-shadow: 0 0 0 0   rgba(214,64,48,0.8); }
+    70% { box-shadow: 0 0 0 40px rgba(214,64,48,0);  }
+    100%{ box-shadow: 0 0 0 0   rgba(214,64,48,0);   }
+  }`;
+  document.head.appendChild(s);
+}
+
+function updateBgMarker(item) {
+  if (!bgMap) return;
+  const lat = parseFloat(item.dataset.lat);
+  const lng  = parseFloat(item.dataset.lng);
+  const title = item.querySelector('.bt-title')?.textContent || '';
+  if (isNaN(lat)) return;
+
+  // 移除旧标记
+  if (bgMarker) bgMap.removeLayer(bgMarker);
+
+  // 新标记：更大、带白色描边
+  const icon = L.divIcon({
+    className: '',
+    html: `<div style="
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #d64030;
+      border: 2.5px solid #fff;
+      box-shadow: 0 0 0 0 rgba(214,64,48,0.8);
+      animation: bgPing 1.6s ease-out infinite;
+    "></div>`,
+    iconSize: [20, 20],
+    iconAnchor: [10, 10],
   });
+  bgMarker = L.marker([lat, lng], { icon }).addTo(bgMap);
+
+  // 更新底部标签
+  const labelEl = document.getElementById('bg-map-label');
+  if (labelEl) labelEl.textContent = title;
+}
+
+// 滚动驱动：节点进入视口中央才切换标记，地图视角不动
+const btScrollObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    btItems.forEach(i => i.classList.remove('active'));
+    entry.target.classList.add('active');
+    updateBgMarker(entry.target);
+  });
+}, {
+  root: null,
+  rootMargin: '-38% 0px -38% 0px',
+  threshold: 0,
 });
+
+btItems.forEach(el => btScrollObserver.observe(el));
 
 // ─────────────────────────────────────
 // 5. ACCORDION
@@ -269,7 +292,7 @@ document.querySelectorAll('.epi-grid, .epi-closing').forEach(el => epiObserver.o
 // 9. RIGHT-SIDE PROGRESS NAV
 // ─────────────────────────────────────
 const pnItems = document.querySelectorAll('.pn-item');
-const sections = ['hero', 'background', 'impacts-section', 'epilogue']
+const sections = ['hero', 'background', 'timeline-section', 'impacts-section', 'epilogue']
   .map(id => document.getElementById(id))
   .filter(Boolean);
 

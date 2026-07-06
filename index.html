@@ -28,7 +28,7 @@
     <!-- Key stats with count-up -->
     <div class="hero-stats">
       <div class="hero-stat">
-        <span class="stat-num" data-target="99" data-suffix="天">0</span>
+        <span class="stat-num" data-target="99" data-suffix="+天">0</span>
         <span class="stat-label">战争已持续</span>
       </div>
       <div class="hero-stat">
@@ -58,51 +58,90 @@
      BACKGROUND: WAR CONTEXT
 ══════════════════════════════════════ -->
 <section id="background">
-  <div class="bg-layout">
+  <div class="bg-single">
 
-    <!-- LEFT: text content -->
-    <div class="bg-left">
+    <div class="section-header left">
+      <span class="section-label">战争背景</span>
+      <h2>这场战争<br>是如何开始的</h2>
+      <p class="section-intro">从2023年加沙战争的引爆，到2026年2月28日的突袭，这场冲突有其深刻的历史根源。</p>
+    </div>
+
+    <!-- 对阵卡片 -->
+    <div class="faction-row">
+      <div class="faction-side">
+        <div class="faction-bar" style="background:#d64030"></div>
+        <div class="faction-content">
+          <div class="faction-name">美以联军</div>
+          <div class="faction-members">
+            <div class="faction-member"><span class="faction-flag">🇺🇸</span><span>美国——空袭与情报</span></div>
+            <div class="faction-member"><span class="faction-flag">🇮🇱</span><span>以色列——地面与空中协同</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faction-vs">VS</div>
+
+      <div class="faction-side">
+        <div class="faction-bar" style="background:#1a8a84"></div>
+        <div class="faction-content">
+          <div class="faction-name">伊朗 + 代理人</div>
+          <div class="faction-members">
+            <div class="faction-member"><span class="faction-flag">🇮🇷</span><span>伊朗革命卫队</span></div>
+            <div class="faction-member"><span class="faction-flag">🇱🇧</span><span>真主党（黎巴嫩）</span></div>
+            <div class="faction-member"><span class="faction-flag">🇾🇪</span><span>胡塞武装（也门）</span></div>
+            <div class="faction-member"><span class="faction-flag">🇮🇶</span><span>伊拉克什叶派民兵</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Accordion -->
+    <div class="bg-accordion">
+      <div class="acc-item open">
+        <button class="acc-trigger">
+          <span class="acc-icon">01</span>
+          <span class="acc-title">根源：核问题与"抵抗轴心"</span>
+          <span class="acc-chevron">↓</span>
+        </button>
+        <div class="acc-body">
+          <p>数十年来，伊朗核计划始终是中东地区的核心紧张来源。2023年10月，哈马斯对以色列发动袭击，伊朗支持的"抵抗轴心"——真主党、胡塞武装、伊拉克民兵——全面激活，使冲突规模骤然升级。2024年，以色列与伊朗两度直接交火，打破了两国多年代理人作战的默契。</p>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-trigger">
+          <span class="acc-icon">02</span>
+          <span class="acc-title">导火索：谈判破裂与奇袭</span>
+          <span class="acc-chevron">↓</span>
+        </button>
+        <div class="acc-body">
+          <p>2025年6月，美以联合发动"十二天战争"，空袭伊朗核设施，停火后核问题仍悬而未决。2026年2月，谈判重启，伊朗释放积极信号。然而2月28日，美以突然发动"史诗狂怒行动"，最高领袖哈梅内伊遇刺身亡，全面战争就此爆发。</p>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-trigger">
+          <span class="acc-icon">03</span>
+          <span class="acc-title">扩散：从海峡到全球</span>
+          <span class="acc-chevron">↓</span>
+        </button>
+        <div class="acc-body">
+          <p>战争爆发三天后，伊朗宣布封锁霍尔木兹海峡，IEA称其为"史上最大供应中断"，全球油价单日飙升超30%。战火随后蔓延至黎巴嫩，伊朗向多个海湾国家发动逾660次导弹袭击。4月8日临时停火，但截至2026年6月，谈判持续僵持。</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     TIMELINE + MAP
+══════════════════════════════════════ -->
+<section id="timeline-section">
+  <div class="tl-layout">
+    <div class="tl-left">
       <div class="section-header left">
-        <span class="section-label">战争背景</span>
-        <h2>这场战争<br>是如何开始的</h2>
-        <p class="section-intro">从2023年加沙战争的引爆，到2026年2月28日的突袭，这场冲突有其深刻的历史根源。</p>
+        <span class="section-label">事件脉络</span>
+        <h2>关键节点</h2>
       </div>
-
-      <!-- Accordion narrative -->
-      <div class="bg-accordion">
-        <div class="acc-item open">
-          <button class="acc-trigger">
-            <span class="acc-icon">01</span>
-            <span class="acc-title">根源：核问题与"抵抗轴心"</span>
-            <span class="acc-chevron">↓</span>
-          </button>
-          <div class="acc-body">
-            <p>数十年来，伊朗核计划始终是中东地区的核心紧张来源。2023年10月，哈马斯对以色列发动袭击，伊朗支持的"抵抗轴心"——真主党、胡塞武装、伊拉克民兵——全面激活，使冲突规模骤然升级。2024年，以色列与伊朗两度直接交火，打破了两国多年代理人作战的默契。</p>
-          </div>
-        </div>
-        <div class="acc-item">
-          <button class="acc-trigger">
-            <span class="acc-icon">02</span>
-            <span class="acc-title">导火索：谈判破裂与奇袭</span>
-            <span class="acc-chevron">↓</span>
-          </button>
-          <div class="acc-body">
-            <p>2025年6月，美以联合发动"十二天战争"，空袭伊朗核设施，停火后核问题仍悬而未决。2026年2月，谈判重启，伊朗释放积极信号。然而2月28日，美以突然发动"史诗狂怒行动"，最高领袖哈梅内伊遇刺身亡，全面战争就此爆发。</p>
-          </div>
-        </div>
-        <div class="acc-item">
-          <button class="acc-trigger">
-            <span class="acc-icon">03</span>
-            <span class="acc-title">扩散：从海峡到全球</span>
-            <span class="acc-chevron">↓</span>
-          </button>
-          <div class="acc-body">
-            <p>战争爆发三天后，伊朗宣布封锁霍尔木兹海峡，IEA称其为"史上最大供应中断"，全球油价单日飙升超30%。战火随后蔓延至黎巴嫩，伊朗向多个海湾国家发动逾660次导弹袭击。4月8日临时停火，但截至2026年6月，谈判持续僵持。</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Vertical timeline -->
       <div class="bg-timeline">
         <div class="bt-item key" data-lat="31.5" data-lng="34.8">
           <div class="bt-dot"></div>
@@ -170,12 +209,11 @@
       </div>
     </div>
 
-    <!-- RIGHT: sticky map -->
-    <div class="bg-map-wrap">
+    <!-- 右侧：sticky 地图，始终存在 -->
+    <div class="tl-map-wrap" style="margin-top: 5.5rem;">
       <div id="bg-map"></div>
       <div class="bg-map-label" id="bg-map-label">中东局势地图</div>
     </div>
-
   </div>
 </section>
 
@@ -318,7 +356,7 @@
       <div class="epi-stat-block">
         <div class="epi-label">战争状态</div>
         <div class="epi-num ongoing">仍在进行中</div>
-        <div class="epi-sub">截至2026年6月6日，谈判僵持，各方数据持续更新</div>
+        <div class="epi-sub">截至2026年7月8日，谈判僵持，各方数据持续更新</div>
       </div>
       <div class="epi-stat-block">
         <div class="epi-label">核不扩散体系</div>
@@ -353,7 +391,7 @@
 <footer id="site-footer">
   <div class="footer-inner">
     <p class="footer-title">美伊战争：冲击与涟漪</p>
-    <p class="footer-credit">数据叙事小组作业 · 数据截至 2026年6月6日</p>
+    <p class="footer-credit">数据叙事小组作业 · 数据截至 2026年7月8日</p>
   </div>
 </footer>
 
@@ -367,9 +405,13 @@
     <span class="pn-dot"></span>
     <span class="pn-label">战争背景</span>
   </a>
+  <a class="pn-item" href="#timeline-section" data-section="timeline-section">
+    <span class="pn-dot"></span>
+    <span class="pn-label">事件脉络</span>
+  </a>
   <a class="pn-item" href="#impacts-section" data-section="impacts-section">
     <span class="pn-dot"></span>
-    <span class="pn-label">三重影响</span>
+    <span class="pn-label">三重冲击</span>
   </a>
   <a class="pn-item" href="#epilogue" data-section="epilogue">
     <span class="pn-dot"></span>
