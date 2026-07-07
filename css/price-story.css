@@ -374,16 +374,24 @@
 }
 
 /* 源头基线图：强制单栏，让绝对定位的路线卡拿到全宽、不重叠 */
-.converge .baseline-board { grid-template-columns: 1fr; }
-.converge .baseline-side { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.converge .baseline-board,
+.origin-act .baseline-board { grid-template-columns: 1fr; }
+.converge .baseline-side,
+.origin-act .baseline-side { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 /* 加高画布并把上下/左右四张卡拉开，避免绝对定位卡片重叠 */
-.converge .route-map { min-height: 520px; }
-.converge .route-node.iran { top: 30%; }
-.converge .route-node.hormuz { top: 46%; }
-.converge .route-node.asia { top: 6%; }
-.converge .route-node.fertilizer { bottom: 6%; }
+.converge .route-map,
+.origin-act .route-map { min-height: 520px; }
+.converge .route-node.iran,
+.origin-act .route-node.iran { top: 30%; }
+.converge .route-node.hormuz,
+.origin-act .route-node.hormuz { top: 46%; }
+.converge .route-node.asia,
+.origin-act .route-node.asia { top: 6%; }
+.converge .route-node.fertilizer,
+.origin-act .route-node.fertilizer { bottom: 6%; }
 @media (max-width: 720px) {
-  .converge .baseline-side { grid-template-columns: 1fr; }
+  .converge .baseline-side,
+  .origin-act .baseline-side { grid-template-columns: 1fr; }
 }
 
 .story-datalink {
