@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>物价影响 · 四张账单 — 美伊战争</title>
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/subpage.css" />
+  <link rel="stylesheet" href="../css/price-story.css?v=story-20260709b" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Noto+Serif+SC:wght@400;600&family=Space+Mono&display=swap" rel="stylesheet" />
+</head>
+<body class="subpage price-page price-story-page">
+
+  <div class="story-progress" id="story-progress"></div>
+
+  <nav class="subpage-nav">
+    <a href="../index.html" class="nav-back">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M19 12H5M12 5l-7 7 7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      返回首页
+    </a>
+    <div class="nav-chapter">
+      <span class="nav-num">03 / 03</span>
+      <span class="nav-title">物价影响 · 故事版</span>
+    </div>
+    <div class="nav-chapters">
+      <a href="transport.html">交通</a>
+      <a href="energy.html">能源</a>
+      <a href="price-story.html" class="active">物价</a>
+    </div>
+  </nav>
+
+  <main class="subpage-main story-main">
+
+    <!-- ============ Act 0：第一人称代入 ============ -->
+    <section class="hook" id="hook">
+      <div class="hook-inner" id="hook-inner">
+        <div class="hook-bg" data-illus="hormuz" aria-hidden="true"></div>
+        <div>
+          <p class="hook-kicker">From receipts, backwards</p>
+          <p class="hook-day">开战第 <b id="day-num">0</b> 天</p>
+        </div>
+        <div class="hook-feed" id="hook-feed">
+          <article class="hook-event" data-day="1" style="--evt-color:#d64030">
+            <span class="evt-meta">Day 1 · 德黑兰</span>
+            <p>加油站排起长队，邻居说黑市美元一夜之间又跳了一截。</p>
+          </article>
+          <article class="hook-event" data-day="3" style="--evt-color:#e8a838">
+            <span class="evt-meta">Day 3 · 得克萨斯</span>
+            <p>上班顺路加油，一加仑比上周贵了快一美元，我们又不买伊朗的油啊。</p>
+          </article>
+          <article class="hook-event" data-day="6" style="--evt-color:#d64030">
+            <span class="evt-meta">Day 6 · 山东</span>
+            <p>师傅说这周又调价了，加满一箱比月初多花了几十块。</p>
+          </article>
+          <article class="hook-event" data-day="9" style="--evt-color:#2aa198">
+            <span class="evt-meta">Day 9 · 旁遮普</span>
+            <p>村里传，政府开会说化肥补贴要加钱——可柜台上的尿素价还没怎么动。</p>
+          </article>
+          <article class="hook-event" data-day="14" style="--evt-color:#6aa6ff">
+            <span class="evt-meta">Day 14 · 东京</span>
+            <p>这个月电费账单上的"燃料调整费"又往上走了一格。</p>
+          </article>
+          <article class="hook-event" data-day="21" style="--evt-color:#e8a838">
+            <span class="evt-meta">Day 21 · 内罗毕</span>
+            <p>面粉和食用油都涨了，摊主说是船运和化肥闹的，跟中东那场仗有关。</p>
+          </article>
+        </div>
+        <div class="hook-riddle" id="hook-riddle">
+          <strong>同一场战争，四个人收到的却是完全不同的账单。谁先付钱？谁被政策暂时盖住？钱究竟是怎么流到他们手里的？</strong>
+          <span class="scroll-cue">向下滚动，从账单倒推回海峡</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Act 1：美国通勤者 ============ -->
+    <section class="act" id="act-us" data-act="us" style="--act-color:#e8a838">
+      <div class="act-head">
+        <span class="act-num">01 · United States</span>
+        <h2>不买伊朗油的美国人，为什么也在加油站买单？</h2>
+      </div>
+      <div class="act-layout">
+        <div class="flip-card" tabindex="0" role="button" aria-expanded="false" aria-label="点击翻开答案">
+          <div class="flip-card-inner">
+            <div class="flip-face flip-front">
+              <div class="illus-slot" data-illus="us" style="--illus-color:#e8a838"><span class="illus-ph">插画占位 · 加油站前的美国通勤者</span></div>
+              <div class="flip-text">
+                <span class="flip-kicker">开战后第 3 天 · 得克萨斯</span>
+                <p class="flip-q">"我们又不买伊朗油，为什么我的油费还是涨了？"</p>
+              </div>
+              <span class="flip-hint">点击揭示答案 →</span>
+            </div>
+            <div class="flip-face flip-back">
+              <span class="flip-kicker">因为油价是一个全球价格池</span>
+              <p class="flip-a">伊朗油主要流向亚洲，美国几乎不直接买。但供给风险抬高的是全球基准油价 Brent——原油约占美国汽油价的 57%。于是美国人通过全球油价，在加油站替这场战争付了钱。</p>
+              <span class="flip-hint">下方是能证明它的科学图 ↓</span>
+            </div>
+          </div>
+        </div>
+        <div class="act-reveal">
+          <div class="reveal-lock">🔒 点击左侧卡片揭示下面的科学图表</div>
+          <div class="act-chart" data-chart="us-curve"></div>
+        </div>
+      </div>
+      <div class="act-reveal act-wide">
+        <div class="act-chart" data-chart="us-receipts"></div>
+        <p class="act-note">交互账单器：拖动油价滑块，看同一冲击如何变成美国油费、中国油箱、印度财政三种不同的账单。</p>
+      </div>
+    </section>
+
+    <!-- ============ Act 2：中国司机 ============ -->
+    <section class="act" id="act-cn" data-act="cn" style="--act-color:#d64030">
+      <div class="act-head">
+        <span class="act-num">02 · China / Shandong</span>
+        <h2>山东司机一夜之间加满更贵，但为什么没美国那么狠？</h2>
+      </div>
+      <div class="act-layout">
+        <div class="flip-card" tabindex="0" role="button" aria-expanded="false" aria-label="点击翻开答案">
+          <div class="flip-card-inner">
+            <div class="flip-face flip-front">
+              <div class="illus-slot" data-illus="cn" style="--illus-color:#d64030"><span class="illus-ph">插画占位 · 山东加油站的出租车司机</span></div>
+              <div class="flip-text">
+                <span class="flip-kicker">开战后第 6 天 · 山东</span>
+                <p class="flip-q">"加满一箱贵了几十块，可听说美国涨得更凶——同样是油，差别在哪？"</p>
+              </div>
+              <span class="flip-hint">点击揭示答案 →</span>
+            </div>
+            <div class="flip-face flip-back">
+              <span class="flip-kicker">差别在"反应速度"和政策缓冲</span>
+              <p class="flip-a">原油和期货当天就重估——中国最直接连着伊朗油和山东炼化链，冲击来得最快。但国内成品油有调价机制缓冲（这里用 17% 的较低传导率），把国际油价的涨幅压平了一部分。</p>
+              <span class="flip-hint">下方是"谁先动"的科学图 ↓</span>
+            </div>
+          </div>
+        </div>
+        <div class="act-reveal">
+          <div class="reveal-lock">🔒 点击左侧卡片揭示下面的科学图表</div>
+          <div class="act-chart" data-chart="cn-reaction"></div>
+          <p class="act-note">反应速度时间轴：越靠上反应越快。油/气在开战当月就跳过 +10%，食品和 CPI 见顶更晚。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Act 3：印度农民 ============ -->
+    <section class="act" id="act-in" data-act="in" style="--act-color:#2aa198">
+      <div class="act-head">
+        <span class="act-num">03 · India / Punjab</span>
+        <h2>农民柜台价几乎没涨，为什么新闻却说这是一场化肥危机？</h2>
+      </div>
+      <div class="act-layout">
+        <div class="flip-card" tabindex="0" role="button" aria-expanded="false" aria-label="点击翻开答案">
+          <div class="flip-card-inner">
+            <div class="flip-face flip-front">
+              <div class="illus-slot" data-illus="in" style="--illus-color:#2aa198"><span class="illus-ph">插画占位 · 旁遮普稻田里扛尿素袋的农民</span></div>
+              <div class="flip-text">
+                <span class="flip-kicker">开战后第 9 天 · 旁遮普</span>
+                <p class="flip-q">"我买尿素的价钱没怎么变，可政府一直说补贴要加钱——钱到底涨在哪了？"</p>
+              </div>
+              <span class="flip-hint">点击揭示答案 →</span>
+            </div>
+            <div class="flip-face flip-back">
+              <span class="flip-kicker">钱没消失，它流去了别处</span>
+              <p class="flip-a">天然气是氮肥的原料（约占尿素成本 81%）。气价一涨，尿素成本跟着涨。但印度用补贴锁住农民柜台价，于是涨价没落到农民账单上，而是变成政府财政的一大笔支出，并推迟到下一季食品价格。</p>
+              <span class="flip-hint">下方用桑基图画出钱的流向 ↓</span>
+            </div>
+          </div>
+        </div>
+        <div class="act-reveal">
+          <div class="reveal-lock">🔒 点击左侧卡片揭示下面的科学图表</div>
+          <div class="act-chart" data-chart="in-sankey"></div>
+          <p class="act-note">桑基流向图：线越宽，成本传导越多。注意大部分尿素成本没有流向"农民柜台价"，而是流向"政府补贴"。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Act 4：德黑兰家庭 ============ -->
+    <section class="act" id="act-ir" data-act="ir" style="--act-color:#d64030">
+      <div class="act-head">
+        <span class="act-num">04 · Iran / Tehran</span>
+        <h2>离战场最近的家庭，账单也最狠——但原因和前三个人不一样</h2>
+      </div>
+      <div class="act-layout">
+        <div class="flip-card" tabindex="0" role="button" aria-expanded="false" aria-label="点击翻开答案">
+          <div class="flip-card-inner">
+            <div class="flip-face flip-front">
+              <div class="illus-slot" data-illus="ir" style="--illus-color:#d64030"><span class="illus-ph">插画占位 · 德黑兰面包店前的一家人</span></div>
+              <div class="flip-text">
+                <span class="flip-kicker">开战后第 1 天 · 德黑兰</span>
+                <p class="flip-q">"一周之内，30 张面包的价钱几乎翻倍。这也是全球油价传导过来的吗？"</p>
+              </div>
+              <span class="flip-hint">点击揭示答案 →</span>
+            </div>
+            <div class="flip-face flip-back">
+              <span class="flip-kicker">不是。这是本地冲击</span>
+              <p class="flip-a">德黑兰的面包翻倍，主因不是全球油价传导，而是战争、封锁和本币急贬叠加的本地食品/汇率冲击。所以它单独成类——不能和"美国油费""中国油箱"混在同一条传导链里解释。</p>
+              <span class="flip-hint">下方用独立的"本地冲击"卡标注 ↓</span>
+            </div>
+          </div>
+        </div>
+        <div class="act-reveal">
+          <div class="reveal-lock">🔒 点击左侧卡片揭示下面的科学图表</div>
+          <div class="act-chart" data-chart="ir-local"></div>
+          <p class="act-note">数据口径：面包为真实价格案例（BBC Persian 报道）。它被标为"本地冲击"，不参与全球油价传导的测算。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Act 5：收敛回源头 ============ -->
+    <section class="converge" id="converge">
+      <div class="converge-head">
+        <span class="act-num">05 · Back to the strait</span>
+        <h2>四张账单，一个海峡</h2>
+        <p>四个人的账单看起来毫不相关，但顺着钱往回走，它们都汇聚到同一个入口：霍尔木兹海峡。下面这张桑基图，把"一个海峡 → 四张账单"的完整路径画出来。</p>
+        <div class="illus-slot illus-wide" data-illus="hormuz" style="--illus-color:#2aa198"><span class="illus-ph">插画占位 · 霍尔木兹海峡与油轮（源头全景）</span></div>
+      </div>
+
+      <div class="converge-block">
+        <span class="block-label">Master flow · 从一个海峡到四张账单</span>
+        <div class="act-chart" data-chart="master-sankey"></div>
+      </div>
+
+      <div class="converge-block">
+        <span class="block-label">Origin · 战前这条系统怎么运转</span>
+        <div class="act-chart" data-chart="baseline"></div>
+      </div>
+
+      <div class="converge-block">
+        <span class="block-label">Discipline · 哪些数据能直接讲，哪些只能做示意</span>
+        <div class="act-chart" data-chart="cautions"></div>
+      </div>
+
+      <div class="story-datalink">
+        <p>想看完整的价格曲线、反应速度表和全球分化矩阵？</p>
+        <a href="price.html">看完整数据版 →</a>
+      </div>
+    </section>
+
+    <section class="price-sources" aria-label="物价页来源">
+      <span>主要来源</span>
+      <a href="https://www.eia.gov/international/content/analysis/special_topics/World_Oil_Transit_Chokepoints">EIA Chokepoints</a>
+      <a href="https://www.worldbank.org/en/research/commodity-markets">World Bank Pink Sheet</a>
+      <a href="https://www.fao.org/worldfoodsituation/foodpricesindex/en/">FAO Food Price Index</a>
+      <a href="https://www.reuters.com/">Reuters</a>
+      <a href="https://gasprices.aaa.com/">AAA Gas Prices</a>
+      <a href="https://www.bls.gov/cpi/">BLS CPI</a>
+    </section>
+
+  </main>
+
+  <nav class="chapter-nav">
+    <div class="chapter-nav-item prev">
+      <a href="energy.html">
+        <span class="ch-label">上一章</span>
+        <span class="ch-title">← 能源影响</span>
+      </a>
+    </div>
+    <div class="chapter-nav-item next disabled">
+      <span class="ch-label">下一章</span>
+      <span class="ch-title">—</span>
+    </div>
+  </nav>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.3.24/dist/lenis.css" />
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.24/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
+  <script src="../js/price-charts.js?v=price-charts-20260707"></script>
+  <script src="../js/price-story.js?v=story-20260708"></script>
+
+</body>
+</html>
