@@ -1,0 +1,7 @@
+node_modules/
+handoff_packages/
+docs/qa-screenshots/
+scripts/__pycache__/
+*.pyc
+.DS_Store
+.Rhistory
