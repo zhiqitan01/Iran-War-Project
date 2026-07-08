@@ -8,7 +8,7 @@
 
 ```
 iran-war-project/
-├── index.html              # 首页（首屏地图 + 时间线 + 三个影响入口）
+├── index.html              # 首页（首屏地图 + 时间线 + 人道小结 + 三个影响入口）
 ├── css/
 │   ├── style.css           # 全局样式（首页 + 共享变量）
 │   └── subpage.css         # 子页面共享样式
@@ -47,7 +47,7 @@ iran-war-project/
 
 ### 2. 子页面 HTML 内容
 
-在对应 `pages/xxx.html` 的 `<p><!-- 正文段落 -->` 处填写文字。
+在对应 `pages/transport.html` / `energy.html` / `price.html` 的 `<p><!-- 正文段落 -->` 处填写文字。
 
 ### 3. 引入图表库
 
