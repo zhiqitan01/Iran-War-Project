@@ -69,6 +69,7 @@
       color: var(--transport-copy);
       line-height: 1.9;
       font-size: 1rem;
+      text-align: left;
     }
 
     .strait-block,
@@ -87,10 +88,14 @@
     }
 
     .strait-section-head {
-      display: grid;
-      grid-template-columns: 58px minmax(0, 1fr);
-      gap: 0.95rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
       align-items: start;
+    }
+
+    .strait-section-step {
+      flex-shrink: 0;
     }
 
     .strait-section-step {
@@ -125,6 +130,7 @@
       color: var(--text-muted);
       line-height: 1.85;
       font-size: 0.96rem;
+      text-align: left;
     }
 
     .strait-section-head p + p {
@@ -137,7 +143,7 @@
       align-items: center;
       gap: 0.55rem 0.8rem;
       margin-bottom: 0.75rem;
-      margin-left: calc(58px + 0.95rem);
+      margin-left: 0;
     }
 
     .viz-name {
@@ -164,7 +170,7 @@
 
     .viz-caption {
       margin: 0.1rem 0 0;
-      margin-left: calc(58px + 0.95rem);
+      margin-left: 0;
       max-width: 980px;
       color: var(--transport-dim);
       line-height: 1.78;
@@ -1828,6 +1834,9 @@
             <span class="strait-section-step">01</span>
             <div>
               <h3>海峡为何关键</h3>
+            </div>
+          </div>
+          <div class="transport-copy-stack">
               <p>霍尔木兹海峡的关键性不在于地理位置贴近冲突区，而在于它是海湾能源外运唯一的规模化通道，没有第二条运力相当的路径可以承担同等体量。</p>
               <p>沙特和阿联酋分别铺设了绕开海峡的陆上管道，通向延布港和富查伊拉港，但两条管道合计运力仍远小于海峡本身的日通过量，只能分流局部出口，无法替代主航道。相比之下，苏伊士运河一旦受阻，油轮仍可绕行好望角，虽然会增加约 10 至 14 天航程与成本，但至少存在海上替代路径。这正是霍尔木兹与苏伊士在风险结构上的本质差异：前者一旦受限，海运主流没有海上替代通道。</p>
               <p>这决定了海峡通行状态的任何变化，都会直接反映为全球能源供应的可预测性风险，而不是局部区域性事件。这也是下一节需要考察通行秩序具体退化过程的原因。</p>
